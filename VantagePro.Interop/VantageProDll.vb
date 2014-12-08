@@ -615,7 +615,7 @@ Public Module VantageProDll
     Public Function GetWindSpeed_V() As Single
     End Function
     <DllImport("VantagePro.dll", CharSet:=CharSet.Ansi, CallingConvention:=CallingConvention.StdCall)> _
-    Public Function GetWindDir_V(ByVal void) As Int32
+    Public Function GetWindDir_V() As Int32
     End Function
     <DllImport("VantagePro.dll", CharSet:=CharSet.Ansi, CallingConvention:=CallingConvention.StdCall)> _
     Public Function GetWindDirStr_V(ByVal dirStr As String) As String
