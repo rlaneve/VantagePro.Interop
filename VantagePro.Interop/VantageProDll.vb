@@ -1,6 +1,6 @@
 ﻿Imports System.Runtime.InteropServices
 
-Module VantageProDll
+Public Module VantageProDll
     Public Const FAHRENHEIT = 0
     Public Const CELSIUS = 1
     Public Const INCHES = 0
