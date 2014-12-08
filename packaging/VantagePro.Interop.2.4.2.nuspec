@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>VantagePro.Interop</id>
+        <version>2.4.2</version>
+        <title>VantagePro Interop for .NET</title>
+        <authors>Ryan LaNeve</authors>
+        <owners>Ryan LaNeve</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Intended for a 3rd party developer to communicate with a Vantage Pro, Vantage Pro2 or Vantage Vue through the WeatherLink data logger.</description>
+        <copyright />
+        <language>en-US</language>
+        <tags>VantagePro</tags>
+    </metadata>
+    <files>
+        <file src="VantagePro.targets" target="build\VantagePro.targets" />
+        <file src="..\VantagePro.Interop\bin\x86\Debug\VantagePro.Interop.dll" target="lib\net20\VantagePro.Interop.dll" />
+        <file src="..\VantagePro.Interop\bin\x86\Debug\VantagePro.Interop.pdb" target="lib\net20\VantagePro.Interop.pdb" />
+        <file src="CP210xManufacturing.dll" target="native\x86\CP210xManufacturing.dll" />
+        <file src="SiUSBXp.dll" target="native\x86\SiUSBXp.dll" />
+        <file src="VantagePro.dll" target="native\x86\VantagePro.dll" />
+    </files>
+</package>

@@ -1,0 +1,31 @@
+﻿<!--
+***********************************************************************************************
+VantagePro.targets
+***********************************************************************************************
+-->
+
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VantageProDllPath Condition=" '$(VantageProDllPath)' == '' ">$(MSBuildThisFileDirectory)..\native\$(Platform)\VantagePro.dll</VantageProDllPath>
+    <CP210xManufacturingDllPath Condition=" '$(CP210xManufacturingDllPath)' == '' ">$(MSBuildThisFileDirectory)..\native\$(Platform)\CP210xManufacturing.dll</CP210xManufacturingDllPath>
+    <SiUSBXpDllPath Condition=" '$(SiUSBXpDllPath)' == '' ">$(MSBuildThisFileDirectory)..\native\$(Platform)\SiUSBXp.dll</SiUSBXpDllPath>
+  </PropertyGroup>
+
+  <Target Name="CopyVantageProNativeReference">
+    <!-- Make sure the platform has been set appropriately before trying to copy the native reference. -->
+    <Error Code="VP0001" Text="The project platform must be set to x86. Please change your target platform and try again." Condition=" !Exists('$(VantageProDllPath)') " 
+           File="$(MSBuildProjectFile)"/>
+    
+    <Copy SourceFiles="$(VantageProDllPath)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true"/>
+    <Copy SourceFiles="$(CP210xManufacturingDllPath)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true"/>
+    <Copy SourceFiles="$(SiUSBXpDllPath)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true"/>
+  </Target>
+
+  <PropertyGroup>
+    <AfterBuildDependsOn>
+      CopyVantageProNativeReference;
+    </AfterBuildDependsOn>
+  </PropertyGroup>
+  
+  <Target Name="AfterBuild" DependsOnTargets="$(AfterBuildDependsOn)"/>
+</Project>
