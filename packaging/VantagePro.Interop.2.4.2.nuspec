@@ -6,6 +6,7 @@
         <title>VantagePro Interop for .NET</title>
         <authors>Ryan LaNeve</authors>
         <owners>Ryan LaNeve</owners>
+        <projectUrl>https://github.com/rlaneve/VantagePro.Interop</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Intended for a 3rd party developer to communicate with a Vantage Pro, Vantage Pro2 or Vantage Vue through the WeatherLink data logger.</description>
         <copyright />
